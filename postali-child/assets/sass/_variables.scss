@@ -1,0 +1,117 @@
+/**
+ * Sass variables and functions.
+ *
+ * @package Postali Child
+ * @author Postali LLC
+ */
+
+// Breakpoints
+$screen-xxl: 1920px;
+$screen-xl: 1400px;
+$screen-lg: 1200px;
+$screen-mdlg: 1024px;
+$screen-md: 992px;
+$screen-sm: 768px;
+$screen-xs: 667px;
+$screen-xxs: 480px;
+$screen-xxxs: 360px;
+
+// Containers
+$container-max-width: $screen-xxl;
+$container-padding:30px;
+
+// Transitions
+$transition-speed:.3s;
+$transition-fast:.3s ease-in-out;
+$transition-slow:.5s ease-in-out;
+
+// Core Colors
+$blk: #000000;
+$bkgdgrey: #141414;
+$dkgrey: #2C2C2C;
+$grey: #404040;
+$yellow: #ffde8a;
+$ltblue: #0AB4F3;
+$dkblue: #137CB8;
+$white: #FFFFFF;
+$transparent: transparent;
+
+$link-transition-speed: .15s;
+$trans: 0.3s linear;
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato/Lato-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato/Lato-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato/Lato-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato/Lato-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/open-sans/OpenSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/open-sans/OpenSans-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/open-sans/OpenSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/open-sans/OpenSans-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+// Typography
+$icomoon: 'Icomoon';
+$sans: 'Open Sans', sans-serif;
+$lato: 'Lato', sans-serif;
+// $sans-heading: 'Open Sans Condensed', sans-serif; // Sans for Headings
+$sans-heading: 'Open Sans', sans-serif; // Sans for Headings
+
+$body-line-height: 200%;
+
+// Font Weight
+$normal: 400;
+$bold: 700; 

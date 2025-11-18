@@ -1,0 +1,211 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+/* Fonts */
+body, h1, h2, h3, h4, h5, h6, p, a, ul {
+    font-family: $sans;
+} 
+p, a, ul, ol {
+
+}
+ul li, ol li {
+    margin: 0 0 0 20px;
+    font-size: 18px;
+}
+dl, blockquote, img {
+
+}
+
+a {
+    text-decoration:none;
+    transition:$trans;
+    &:hover {
+        text-decoration:none;
+    }
+}
+
+
+* {
+    color:$white !important;
+    font-family: $sans;
+}
+
+.yellow {
+    color:$yellow !important;
+}
+
+h1, h2 {
+    font-family: $sans-heading;
+}
+
+h1 {
+    font-size: 58px;
+    text-transform: none;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px !important;
+    display: block;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 44px;
+    }
+}
+
+h2 {
+    font-size: 35px;
+    text-transform: none;
+    line-height: 1.2;
+    margin: 80px 0 20px !important;
+    display: block;
+    padding: 10px 0 !important;
+    border-top: 1px solid $dkgrey !important;
+    @media screen and (max-width: $screen-sm) {
+        margin: 20px 0 !important;
+    }
+}
+
+h3 {
+    font-size: 20px;
+    margin: 40px 0 15px !important;
+    text-transform: none;
+    line-height: 1.2;
+    display: block;
+    color: $yellow !important;
+    font-style: italic;
+    font-family: $sans;
+}
+
+p,
+ul li,
+ol li {
+    font-size:16px;
+    line-height: 2;
+    margin-bottom:30px;
+    font-family: $sans;
+    &.small {
+        font-size: 14px;
+        line-height: 150%;
+    }
+    &.highlight {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 19px;
+        margin-bottom: 20px !important;
+        line-height: 125%;
+    }
+    a {
+        color:$ltblue !important;
+        &:hover {
+            color:$yellow !important;
+        }
+    }
+}
+
+p {
+    margin-bottom: 20px !important;
+}
+
+p,
+span {
+    &.yellow {
+        display: block;
+        color: $yellow !important;
+        text-transform: uppercase !important;
+        line-height: 1.5;
+        padding-bottom: 15px;
+        letter-spacing: 3px;
+        font-weight: bold;
+        &.italic {
+            font-weight: bold;
+            text-transform: none;
+            font-style: italic;
+        }
+    }
+}
+
+.big-text {
+    font-size: 48px;
+    text-transform: none;
+    line-height: 1.1;
+    display: block;
+    padding: 10px 0 !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none !important;
+    display: block;
+    margin: 20px 0 20px 20px !important;
+    li {
+        position: relative;
+        margin-bottom:15px;
+        &::before {
+            position: absolute;
+            width:8px;
+            height:8px;
+            content: "";
+            left:-25px;
+            top:14px;
+            background-color: $dkblue;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+ol {
+    clear: both;
+    list-style: none;
+    display: block;
+    margin: 20px 0 20px 20px !important;
+    counter-reset: inst;
+    li {
+        margin-bottom: 15px !important;
+        display: block;
+        position: relative;
+        counter-increment: inst;
+        &::before {
+            content: counter(inst) ".";
+            color: $ltblue !important;
+            font-size:16px;
+            line-height: 2;
+            margin-bottom:30px;
+            font-family: $sans;
+            position: absolute;
+            left:-25px;
+            font-weight: bold;
+            @media screen and (max-width:$screen-xxs) {
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+.button {
+    border-radius: 0;
+    border: none;
+    -webkit-border-top-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-radius-topright: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background: $dkblue;
+    color: $white;
+    display: inline-block;
+    padding:15px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: $sans;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    &:hover {
+        background: lighten($dkblue,15%);
+        color: $white !important;
+        transition: $trans;
+    }
+}

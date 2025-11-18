@@ -1,0 +1,286 @@
+/**
+ * PPC Landing Page Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+*/
+
+.page-template-page-ppc-landing {
+    h3 {
+        color: $yellow !important;
+    }
+    header {
+        #header-top_right {
+            height: 45px !important;
+            #header-top_menu {
+                display: none !important;
+            }
+        }
+    }
+    #mini-logo {
+        display: none !important;
+    }
+    .page-header {
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        .column-50.right {
+            display: none;
+        }
+        @media screen and (max-width: $screen-sm) {
+            padding-top: 60px;
+            background-image: none !important;
+            .container {
+                padding: 0;
+                .column-50 {
+                    .spacer-60:first-of-type {
+                        height: 10px;
+                    }
+                    &.left {
+                        width: 85%;
+                        margin: -90px auto 30px;
+                    }
+                    &.right {
+                        display: block;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: right top;
+                        padding-top: 30px;
+                    }
+                }
+            }
+        }
+        .breadcrumb-block {
+            .columns {
+                .column-50  {
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+            .bio-img-caption {
+                color: $white !important;
+            }
+            &::after {
+                display: none !important;
+            }
+        }
+        h1 {
+            font-weight: bold !important;
+            font-size: 64px;
+            line-height: 1.1;
+            font-family: $lato;
+            color: $white;
+            @media screen and (max-width: $screen-sm) {
+                font-size: 48px;
+            }
+            @media screen and (max-width: $screen-sm) {
+                font-size: 36px;
+            }
+        }
+        p {
+            color: $white;
+            font-style: italic;
+            &.italic {
+                font-weight: bold;
+            }
+        }
+        .header-cta-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            width: 95%;
+            @media screen and (max-width:$screen-lg) {
+                flex-wrap: wrap;
+            }
+            .cta-left {
+                display: flex;
+                width: 50%;
+                @media screen and (max-width:$screen-lg) {
+                    width:100%;
+                }
+                p.large {
+                    color:$white;
+                    margin-bottom: 0;
+                }
+            }
+            .cta-right {
+                width: 45%;
+                @media screen and (max-width:$screen-lg) {
+                    width:100%;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+    #panel1 {
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            @media screen and (max-width: $screen-sm) {
+                margin-bottom: 0 !important;
+            }
+        }
+        .benefits-list {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-top: 45px;
+            &_item {
+                flex-basis: 30%;
+                h3 {
+                    margin: 0 auto 15px auto !important;
+                    font-weight: bold !important; 
+                    text-align: center;  
+                }
+                p {
+                    text-align: center;
+                    margin: 0 auto 10px;
+                }
+                
+            }
+            @media screen and (max-width: $screen-md) {
+                display: block;
+                padding-top: 15px;
+                &_item {
+                    margin-bottom: 45px;
+                    p.large {
+                        margin: 25px auto 5px !important;
+                    }
+                }
+            }
+        }
+    }
+    #panel2,
+    #panel4 {
+        .column-75 {
+            margin: 0 auto;
+            .review {
+                margin-left: 50px;
+                @media screen and (max-width: $screen-md) {
+                    margin-left: 0;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -50px;
+                    height: 100%;
+                    width: 1px;
+                    border-left: 2px solid $ltblue;
+                    top: -10px;
+                }
+                &:after {
+                    content: "\e906";
+                    font-family: icomoon;
+                    color: $ltblue;
+                    position: absolute;
+                    left: -130px;
+                    font-size: 55px;
+                    top: -20px;
+                    @media screen and (max-width:$screen-mdlg) {
+                        display:none;
+                    }
+                }
+                p.large {
+                    margin-bottom: 10px;
+                }
+                p.small_caps {
+                    margin-bottom: 0 !important;
+                }
+                .testimonial-img {
+                    max-width: 140px;
+                    position: relative;
+                    top: -10px;
+                    left: -12px;
+                    @media screen and (max-width: $screen-sm) {
+                        max-width: revert;
+                        position: static;
+                        top: auto;
+                        left: auto;
+                        width: 40%;
+                    }
+                }
+            }
+            .result {
+                margin-left: 50px;
+                @media screen and (max-width: $screen-md) {
+                    margin-left: 0;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -50px;
+                    height: 100%;
+                    width: 1px;
+                    border-left: 2px solid $ltblue;
+                    top: 0;
+                }
+                p.large {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    #panel3 {
+        .headshot {
+            img {
+                max-width: 60%;
+                margin: 0 auto;
+                @media screen and (max-width: $screen-sm) {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+        @media screen and (max-width: $screen-sm) {
+            .container {
+                padding: 0;
+                .column-50:first-of-type {
+                    width: 85%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    #panel5 {
+        p {
+            font-style: italic !important;
+            font-size: 16px !important;
+            line-height: 1.8 !important;
+            margin-bottom: 7px !important;
+        }
+        .form-holder {
+            padding: 30px;
+            p {
+                margin-bottom: 15px !important;
+            }
+            @media screen and (max-width: $screen-md) {
+                margin-top: 45px;
+            }
+            @media screen and (max-width: $screen-sm) {
+                margin-top: 0;
+                padding: 30px 0;
+            }
+        }
+    }
+    #pre-footer {
+        display: none !important;
+    }
+    footer {
+        section {
+            padding: 60px 0 !important;
+            #ppc-logo {
+                max-width: 310px;
+            }
+        }
+    }
+    .mobile-cta {
+        display: none !important;
+    }
+    @media screen and (max-width: $screen-sm) {
+        section {
+            padding: 20px 0;
+        }
+    }
+}

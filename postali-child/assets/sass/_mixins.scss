@@ -1,0 +1,331 @@
+/**
+ * Theme footer
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+
+@mixin drop-down-select {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    margin: 0 auto;
+    @media screen and (max-width:$screen-sm) {
+        margin-bottom: 20px;
+    }
+    #select-box {
+        background: $dkblue;
+        display: block;
+        width: 350px;
+        margin: 0 auto;
+        @media screen and (max-width: $screen-xs) {
+            width: auto;
+        }
+        &:hover {
+            background: $ltblue;
+        }
+        #options-view-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 3;
+            color: $blk !important;
+            &:checked ~ #options a {
+                display: block;
+            }
+
+            &:checked ~ #options {
+                padding:15px 0;
+                background:$blk;
+            }
+
+            &:checked ~ #options #option-bg { display: block; }
+        }
+        #select-button {
+            position: relative;
+            height: 16px;
+            cursor: pointer;
+            #selected-value {
+                font-size: 18px;
+                line-height: 100%;
+                text-align: center;
+                font-family: $sans;
+                @media screen and (max-width: $screen-xs) {
+                    font-size: 16px;
+                }
+            }
+            #chevrons {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 12px;
+                padding: 9px 14px;
+            }
+        }
+        #options {
+            position: absolute;
+            top: 46px;
+            right: 0;
+            left: 0;
+            width: 350px;
+            margin: 0 auto;
+            z-index: 2;
+            padding: 10px 0;
+
+            .options {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                padding-bottom: 5px;
+                a {
+                    display: none;
+                    padding: 10px 0;
+                    font-family: $sans;
+                    font-size: 16px;
+                }
+            }
+            &:hover {
+                .options {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .option, .label {
+        font-size: 16px;
+    }
+    
+    .option {
+        position: relative;
+        line-height: 1;
+        transition: 0.3s ease all;
+        z-index: 2;
+        text-align: center;
+        &:hover ~ #option-bg { text-decoration: underline; }
+        &:hover a { color: $white; }
+    }
+
+    a {
+        display: none;
+        padding: 0;
+        font-family: $sans;
+        line-height: 1.8;
+        font-size: 16px;
+        &:hover {
+            text-decoration: underline;
+            text-transform: $trans;
+        }
+    }
+
+    @-webkit-keyframes moveup {
+        0%{ bottom: -25px; opacity: 0;}
+        100%{ bottom: 0; opacity: 1;}
+    }
+
+    @keyframes moveup {
+        0%{ bottom: -25px; opacity: 0;}
+        100%{ bottom: 0; opacity: 1;}
+    }
+
+    @-webkit-keyframes movedown {
+        0%{ top: -25px; opacity: 0;}
+        100%{ top: 0; opacity: 1;}
+    }
+
+    @keyframes movedown {
+        0%{ top: -25px; opacity: 0;}
+        100%{ top: 0; opacity: 1;}
+    }
+
+    #option-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 40px;
+        transition: 0.3s ease all;
+        z-index: 1;
+        display: none;
+    }
+
+    .option:nth-child(2):hover ~ #option-bg { top: 40px; }
+    .option:nth-child(3):hover ~ #option-bg { top: 80px; }
+    .option:nth-child(4):hover ~ #option-bg { top: 120px; }
+    .option:nth-child(5):hover ~ #option-bg { top: 160px; }
+    .option:nth-child(6):hover ~ #option-bg { top: 200px; }
+    .option:nth-child(7):hover ~ #option-bg { top: 240px; }
+    .option:nth-child(8):hover ~ #option-bg { top: 280px; }
+    .option:nth-child(9):hover ~ #option-bg { top: 320px; }
+    .option:nth-child(10):hover ~ #option-bg { top: 360px; }
+    .option:nth-child(11):hover ~ #option-bg { top: 400px; }
+    .option:nth-child(12):hover ~ #option-bg { top: 440px; }
+    .option:nth-child(13):hover ~ #option-bg { top: 480px; }
+    .option:nth-child(14):hover ~ #option-bg { top: 520px; }
+    .option:nth-child(15):hover ~ #option-bg { top: 560px; }
+    .option:nth-child(16):hover ~ #option-bg { top: 600px; }
+    .option:nth-child(17):hover ~ #option-bg { top: 640px; }
+    .option:nth-child(18):hover ~ #option-bg { top: 680px; }
+    .option:nth-child(19):hover ~ #option-bg { top: 720px; }
+}
+
+@mixin triangle-div {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    justify-content: center;
+    position:relative;
+    align-items: center;
+    -webkit-clip-path: polygon(0 0, 50% 100%, 100% 0);
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+    background:$dkgrey;
+    height:100%;
+    @media screen and (max-width: $screen-sm) {
+        -webkit-clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
+                clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        margin-top: -2px;
+    }
+    &.flip {
+        -webkit-clip-path: polygon(50% 0, 100% 80%, 100% 100%, 0 100%, 0 80%);
+                clip-path: polygon(50% 0, 100% 80%, 100% 100%, 0 100%, 0 80%);
+        @media screen and (max-width: $screen-sm) {
+            -webkit-clip-path: polygon(50% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
+                    clip-path: polygon(50% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
+            width: 100%;
+        }
+    }
+    &.map {
+        -webkit-clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0 100%, 0 40%);
+                clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0 100%, 0 40%);
+        position: relative;
+        bottom: 5px;
+        @media screen and (max-width: $screen-sm) {
+            -webkit-clip-path: polygon(50% 0, 100% 15%, 100% 100%, 0 100%, 0 15%);
+                    clip-path: polygon(50% 0, 100% 15%, 100% 100%, 0 100%, 0 15%);
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 100%;
+        }
+    }
+    &.remove  {
+        -webkit-clip-path: revert !important;
+                clip-path: revert !important;
+    }
+}
+
+@mixin button-shape {
+    padding: 6px 40px;
+    border-radius: 0 25px;
+    &.outline {
+        padding: 4px 38px;
+    }
+}
+
+@mixin post-card-styles {
+    &.practice-area {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: $bkgdgrey;
+        padding: 40px 120px 80px;
+        margin: 10px 0;
+        min-height: 300px;
+        display: grid;
+        @media screen and (max-width: $screen-lg) {
+            padding: 40px 30px 60px;
+        }
+        @media screen and (max-width: $screen-sm) {
+            display: block;
+            padding: 30px 15px 0 !important;
+            background-position: center left;
+            min-height: revert;
+            &::after {
+                content:"";
+                bottom:0;
+                left: 0;
+                width:100%;
+                height:200px;
+                background: rgb(245,245,236);
+                background: linear-gradient(180deg, rgba(245,245,236,0) 40%, rgba(0,0,0,1) 100%);
+                position: relative;
+                margin: 30px !important;
+            }
+        }
+        a {
+            text-decoration: none;
+            h2, h3 {
+                &::after {
+                    content: '»';
+                    margin-left: 15px;
+                    display: inline-block;
+                }
+            }
+        }
+        h2, h3 {
+            color: $white !important;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 42px;
+            line-height: 1.5;
+            text-transform: uppercase;
+            font-family: $sans-heading;
+            border-top: none !important;
+            margin: 40px 0 0 !important;
+            padding-bottom: 0 !important;
+            @media screen and (max-width: $screen-sm) {
+                font-size: 32px;
+                margin: 30px 0 0 !important;
+            }
+        }
+        .card_upper {
+            @media screen and (max-width: $screen-sm) {
+                display: block;
+            }
+        }
+        .card_lower {
+            margin-top: -10px;
+        }
+        &.homepage {
+            margin: 0 !important;
+            @media screen and (max-width: $screen-sm) {
+                margin: 30px !important;
+            }
+        }
+    }
+}
+
+@mixin yellow-caps {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.1;
+    font-family: $sans;
+    letter-spacing: 3px;
+    color: $yellow !important;
+    text-transform: uppercase !important;
+    padding-bottom: 10px;
+}
+
+@mixin grid-layout-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    @media screen and (max-width: $screen-xs) {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 2rem;
+        -moz-column-gap: 0;
+             column-gap: 0;
+    }
+}
