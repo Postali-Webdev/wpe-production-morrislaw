@@ -35,7 +35,8 @@
                     <p><strong>Quick Links</strong></p>
                     <?php
                         $args = array(
-                            'container' => false,
+                            'container' => 'nav',
+                            'container_aria_label' => 'footer quick links',
                             'theme_location' => 'footer-nav-links'
                         );
 						wp_nav_menu( $args );
@@ -45,7 +46,8 @@
                     <p><strong>Practice Areas</strong></p>
                     <?php
                         $args = array(
-                            'container' => false,
+                            'container' => 'nav',
+                            'container_aria_label' => 'footer practice area links',
                             'theme_location' => 'footer-nav-practice'
                         );
 						wp_nav_menu( $args );

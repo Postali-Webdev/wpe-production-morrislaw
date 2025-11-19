@@ -80,12 +80,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<?php
 						if ( is_tree(74) ) {
 							$args = array(
-								'container' => false,
+								'container' => 'nav',
+								'container_aria_label' => 'main navigation',
 								'theme_location' => 'header-nav-berkeley'
 							);
 						} else {
 							$args = array(
-								'container' => false,
+								'container' => 'nav',
+								'container_aria_label' => 'main navigation',
 								'theme_location' => 'header-nav'
 							);
 						}

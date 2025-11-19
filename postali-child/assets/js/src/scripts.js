@@ -16,28 +16,28 @@ jQuery( function ( $ ) {
     //Hamburger animation
 	$('#menu-icon').click(function() {
 		$(this).toggleClass('active');
-		$('#menu-main-menu').toggleClass('active');
+		$('#menu-main-menu, #menu-main-menu-berkeley').toggleClass('active');
 		return false;
 	});
 
 	//Toggle mobile menu & search
 	$('.toggle-nav').click(function() {
-		$('#menu-main-menu').slideToggle(400);
+		$('#menu-main-menu, #menu-main-menu-berkeley').slideToggle(400);
 	});
 	 
 	//Close navigation on anchor tap
 	$('.toggle-nav.active').click(function() {	
-		$('#menu-main-menu').slideUp(400);
+		$('#menu-main-menu, #menu-main-menu-berkeley').slideUp(400);
 	});	
 
 	//Mobile menu accordion toggle for sub pages
-	$('#menu-main-menu li.menu-item-has-children a').click(function() {
+	$('#menu-main-menu li.menu-item-has-children a, #menu-main-menu-berkeley li.menu-item-has-children a').click(function() {
 		// $(this).preventDefault();
 		$(this).siblings('.sub-menu').slideToggle(400);
 		$(this).parent().toggleClass('toggle-background');
 		$(this).find('.icon-icon-chevron-right').toggleClass('toggle-rotate');
 	});
-	$('#menu-main-menu li.menu-item-has-children').click(function() {
+	$('#menu-main-menu li.menu-item-has-children, #menu-main-menu-berkeley li.menu-item-has-children').click(function() {
 		$(this).find('.sub-menu').slideToggle(400);
 		$(this).toggleClass('toggle-background');
 		$(this).find('.icon-icon-chevron-right').toggleClass('toggle-rotate');
@@ -68,10 +68,10 @@ jQuery( function ( $ ) {
 
 	// Closes all menus when anything outside the menu is clicked.
 	$( document ).on( 'click', function() {
-		$( '#menu-main-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children > a' ).removeClass( 'open' ).next( '.sub-menu' ).slideUp( 200 );
+		$( '#menu-main-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children > a, #menu-main-menu-berkeley > .menu-item-has-children > .sub-menu > .menu-item-has-children > a' ).removeClass( 'open' ).next( '.sub-menu' ).slideUp( 200 );
 	});
 
-	$( '#menu-main-menu *' ).on( 'click', function( e ) {
+	$( '#menu-main-menu *, #menu-main-menu-berkeley *' ).on( 'click', function( e ) {
 		e.stopPropagation();
 	});
 
